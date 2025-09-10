@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pastas Gavassa | Lo rico es lo nuestro</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="estilos-formularios.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link href='dist/simplelightbox.min.css' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" href="unslider-master/dist/css/unslider.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="unslider-master/src/js/unslider.js"></script>
+    <script src="https://use.fontawesome.com/0e3cac397a.js"></script>
+
+    <script>
+        jQuery(document).ready(function($) {
+            $('.my-slider').unslider({
+                autoplay: true,
+                delay: 7000,
+                animation: 'fade',
+                nav: false,
+                arrows: false
+            });
+            // Llama a las funciones al cargar la página para establecer el estado inicial
+            toggleProductSection();
+        });
+
+        function toggleProductSection() {
+            const reclamoProductoDiv = document.getElementById('reclamo_producto');
+            const motivoSeleccionado = document.querySelector('input[name="motivo"]:checked').value;
+            
+            // Muestra o oculta la sección de "Calidad del Producto"
+            if (motivoSeleccionado === 'Calidad del producto') {
+                reclamoProductoDiv.style.display = 'block';
+                // Hace todos los campos obligatorios EXCEPTO el input de tipo 'file'
+        document.querySelectorAll('#reclamo_producto input:not([type="file"])').forEach(input => {
+            input.setAttribute('required', 'required');
+        });
+                document.querySelectorAll('#reclamo_producto select').forEach(select => {
+                    select.setAttribute('required', 'required');
+                });
+            } else {
+                reclamoProductoDiv.style.display = 'none';
+                // Elimina el atributo 'required' si la sección está oculta
+                document.querySelectorAll('#reclamo_producto input').forEach(input => {
+                    input.removeAttribute('required');
+                });
+                document.querySelectorAll('#reclamo_producto select').forEach(select => {
+                    select.removeAttribute('required');
+                });
+            }
+        }
+        
+    //validar que no se envien campos vacios
+        document.querySelector("form").addEventListener("submit", function(e) {
+        let campos = ["nombre", "apellido", "cedula", "ciudad", "telefono", "correo", "motivo", "prodName", "nombreproducto", "marca", "presentacion", "lote", "fechavencimiento", "reclamo"];
+        for (let campo of campos) {
+            const el = document.querySelector(`[name="${campo}"]`);
+            if (el && el.value.trim() === "") {
+                alert("Por favor, complete todos los campos.");
+                e.preventDefault();
+                return;
+            }
+        }
+    });
+        </script>
+</head>
+<body>
+    <header>
+        <div class="menu-movil"><i class="fa fa-bars"></i></div>
+        <script type="text/javascript">
+            $(".menu-movil").click(function(){
+                $(".menu").toggle();
+            });
+        </script>
+        <div class="logo-movil"><a href="index.html"><img src="img/logo.png"></a></div>
+        <div class="menu container">
+            <ul>
+                <li class="logo"><a href="index.html"><img src="img/logo.png"></a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nuestra Compañía</a></li>
+                <li class="">
+                    <a href="#">Productos</a>
+                    <ul>
+                        <li class="gallery">
+                            <a href="gavassa.html">Gavassa</a>
+                        </li>
+                        <li class="gallery">
+                            <a href="catalogo.html">Catálogo</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="#">Servicios</a>
+                    <ul>
+                        <li class="brochure-cat">
+                            <a href="img/brochure1.jpg">Maquila</a>
+                            <a class="ocultar"  href="img/brochure2.jpg"></a>
+                            <a class="ocultar"  href="img/brochure3.jpg"></a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="cambiaton.html">Cambiatón</a></li>
+                
+                
+           
+				<li><a href="#">Contáctenos</a>
+					<ul class="contacto-lista">
+						<li><a href="trabajo.html">Trabaje con nosotros</a></li>
+						<li><a href="proveedor.html">Quiere ser nuestro proveedor?</a></li>
+						<li><a href="pqr.html">Formato peticiones quejas y reclamos</a></li>
+						<li><a href="compras.html">Quiere comprar nuestro producto?</a></li>
+					</ul>
+				</li>
+                
+                <li><a href="login.php" class="link-blanco"><i class="fa fa-lock"></i> Acceso empleados</a></li>
+                <li>
+                    <a href="https://www.psepagos.co/PSEHostingUI/DatabaseTicketOffice.aspx?ID=10078" target="_blank">
+                        <img src="img/logo-pse.png" height="40">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="nosotros">
+        <div style="margin-bottom: 20px;" class="titulo-valores">FORMATO ELECTRÓNICO DE PETICIONES, QUEJAS Y RECLAMOS</div>
+        <div class="formulario-trabaje container formulario ancho-formulario">
+            <form enctype="multipart/form-data" action="peticiones.php" method="post" name="messageform" id="pqrForm">
+                <div id="form_pqr" class="wpcf7">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div id="info_personal" class="col-xs-12 col-ms-12 col-md-12" style="border-bottom: 1px solid #ccc; padding-bottom: 25px; margin-bottom: 25px;">
+    <h3><span>Datos Personales</span></h3>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row form_fila">
+                <div class="col-xs-12 col-ms-4 col-md-4 campo"><label>Nombre: </label></div>
+                <div class="col-xs-12 col-ms-8 col-md-8 campo"><input type="text" name="nombre" value="" required="" placeholder=""></div>
+            </div>
+            <div class="row form_fila">
+                <div class="col-xs-12 col-ms-4 col-md-4 campo"><label>Cédula o Nit: </label></div>
+                <div class="col-xs-12 col-ms-8 col-md-8 campo"><input type="text" name="cedula" value="" required="" placeholder=""></div>
+            </div>
+            <div class="row form_fila">
+                <div class="col-xs-12 col-ms-4 col-md-4 campo"><label>Teléfono: </label></div>
+                <div class="col-xs-12 col-ms-8 col-md-8 campo"><input type="text" name="telefono" value="" required="" placeholder=""></div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row form_fila">
+                <div class="col-xs-12 col-ms-4 col-md-4 campo"><label>Apellido: </label></div>
+                <div class="col-xs-12 col-ms-8 col-md-8 campo"><input type="text" name="apellido" value="" required="" placeholder=""></div>
+            </div>
+            <div class="row form_fila">
+                <div class="col-xs-12 col-ms-4 col-md-4 campo"><label>Ciudad: </label></div>
+                <div class="col-xs-12 col-ms-8 col-md-8 campo"><input type="text" name="ciudad" value="" required="" placeholder=""></div>
+            </div>
+            <div class="row form_fila">
+                <div class="col-xs-12 col-ms-4 col-md-4 campo"><label>Correo electrónico: </label></div>
+                <div class="col-xs-12 col-ms-8 col-md-8 campo"><input type="email" name="correo" value="" required="" placeholder="usuario@dominio.com"></div>
+            </div>
+        </div>
+    </div>
+</div>
+                            <div id="info_producto" class="col-xs-12 col-ms-12 col-md-12">
+                                <div id="motivo">
+                                    <h3>Motivo de la Petición, Queja o Reclamo</h3>
+                                    <div class="row form_field">
+    <div class="col-xs-12 col-ms-12 col-md-12 ">
+        <div class="item_motivo">
+            <input id="motivo1" type="radio" name="motivo" value="Calidad del producto" checked onclick="toggleProductSection();">
+            <label for="motivo1">Calidad del producto</label>
+        </div>
+        <div class="item_motivo">
+            <input id="motivo4" type="radio" name="motivo" value="Otro" onclick="toggleProductSection();">
+            <label for="motivo4">Otro</label>
+        </div>
+    </div>
+</div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="reclamo_producto" style="display: none;">
+                            <div class="row">
+                                <div class="col-xs-12 col-ms-4 col-md-4">
+                                    <p class="sisu">Si su Petición, Queja o Reclamo es por Calidad, <b>por favor</b> diligencie completamente los campos mencionados en la sección derecha de este recuadro. <b>(Por favor, leer información en el empaque) </b></p>
+                                </div>
+                                <div class="col-xs-12 col-ms-8 col-md-8">
+                                    <div class="container-fluid">
+                                        <div class="row form_fila">
+                                            <div class="col-xs-12 col-ms-5 col-md-5 campo"><label>Lugar de compra del producto: </label></div>
+                                            <div class="col-xs-12 col-ms-7 col-md-7 campo"><input type="text" name="prodName" value="" placeholder=""></div>
+                                        </div>
+                                        <div class="row form_fila">
+                                            <div class="col-xs-12 col-ms-5 col-md-5 campo"><label>Producto: </label></div>
+                                            <div class="col-xs-12 col-ms-7 col-md-7 campo">
+                                                <select name="nombreproducto">
+                                                    <option value="Spaghetti Delgado">Spaghetti Delgado</option>
+                                                    <option value="Spaghetti Grueso">Spaghetti Grueso</option>
+                                                    <option value="Macarrón Corto">Macarrón Corto</option>
+                                                    <option value="Fideos">Fideos</option>
+                                                    <option value="Cabello de Angel">Cabello de Ángel</option>
+                                                    <option value="Rigatoni">Rigatoni</option>
+                                                    <option value="Caracoles">Caracoles</option>
+                                                    <option value="Codos">Codos</option>
+                                                    <option value="Conchas">Conchas</option>
+                                                    <option value="Tornillos">Tornillos</option>
+                                                    <option value="Letras">Letras</option>
+                                                    <option value="Estrellas">Estrellas</option>
+                                                    <option value="Fulminante">Fulminante</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row form_fila">
+                                            <div class="col-xs-12 col-ms-5 col-md-5 campo"><label>Marca: </label></div>
+                                            <div class="col-xs-12 col-ms-7 col-md-7 campo">
+                                                <select name="marca">
+                                                    <option value="Gavassa">Gavassa</option>
+                                                    <option value="Marypas">Marypas</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row form_fila">
+                                            <div class="col-xs-12 col-ms-5 col-md-5 campo"><label>Presentación (Gramos): </label></div>
+                                            <div class="col-xs-12 col-ms-7 col-md-7 campo">
+                                                <select name="presentacion">
+                                                    <option value="90g">90g</option>
+                                                    <option value="125g">125g</option>
+                                                    <option value="200g">200g</option>
+                                                    <option value="250g">250g</option>
+                                                    <option value="500g">500g</option>
+                                                    <option value="1000g">1000g</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row form_fila">
+                                            <div class="col-xs-12 col-ms-5 col-md-5 campo"><label>Lote: </label></div>
+                                            <div class="col-xs-12 col-ms-7 col-md-7 campo"><input type="text" name="lote" value="" placeholder=""></div>
+                                        </div>
+                                        <div class="row form_fila">
+                                            <div class="col-xs-12 col-ms-5 col-md-5 campo"><label>Fecha de Vencimiento: </label></div>
+                                            <div class="col-xs-12 col-ms-7 col-md-7 campo"><input type="text" name="fechavencimiento" value="" placeholder=""></div>
+                                        </div>
+                                        <div class="row form_fila">
+                                            <div class="col-xs-12 col-ms-5 col-md-5 campo"><label>Adjunta una imagen (Opcional): </label></div>
+                                            <div class="col-xs-12 col-ms-7 col-md-7 campo">
+                                                <input id="add_img" type="file" name="attachment">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="autorizo">
+                            <label for="autorizo-checkbox">
+                            <input type="checkbox" id="autorizo-checkbox" name="autoriza" value="Si" required>
+                                Autorizo a Gavassa utilizar los datos diligenciados en esta página.
+                            </label>
+                        </div>
+                        <div id="msj_reclamo">
+                            <span>Por favor, haga una breve descripción de su solicitud: </span>
+                            <textarea name="reclamo" required></textarea>
+                        </div>
+                        <div id="gratitud">
+                            <p>Agradecemos sus observaciones las cuales serán atendidas en el menor tiempo posible. Política de uso de datos personales – Protección de Habeas Data: la información recaudada en el formato adjunto será utilizada por Gavassa exclusivamente para dar pronta respuesta a la información diligenciada por usted. <b>¡GRACIAS!</b></p>
+                            <input type="submit" value="Enviar" class="btn btn-default">
+                        </div>
+                        <span class="recepcion"><b>Nota: </b> la recepción de los mensajes no implica la aceptación de los mismos.</span><br><br>
+                        <a href="http://gavassa.com/proteccion-de-datos.pdf" target="_blank" style="text-decoration: underline; color: #000;"><b style="color: #000;">Política de Privacidad, Protección y Tratamiento de Datos Personales de Gavassa</b></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="frase" id="contacto"><img src="img/frase.png" alt=""></div>
+    </section>
+
+    <footer>
+        <div class="footer-logo"><img src="img/logo.png"></div>
+        <div class="footer-abajo container">
+            <div class="redes">
+                <a href="https://www.facebook.com/pastasgavassa/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+            <div class="creditos"><b>© 2025 · Gavassa · Calle 20 # 12 - 50 Bucaramanga, Santander · <br> Teléfonos de contacto:</b><br> Atención general: 6076960119 - 3153768142 - 018000187696 <br> Seguimiento a entrega de pedidos: 3176680987 <br>Servicio al cliente y PQRS: 3183787188 <br> 
+                <a href="img/politica.pdf" style="color:#919191;">Politica de tratamiento de Datos</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/simple-lightbox.js"></script>
+    <script>
+        $(function(){
+            var $gallery = $('.gallery a').simpleLightbox();
+            var $brochure = $('.brochure-cat a').simpleLightbox();
+            var $fitbrand = $('.gallery-fitbrand a').simpleLightbox();
+            var $marypas = $('.gallery-marypas a').simpleLightbox();
+        });
+    </script>
+</body>
+</html>

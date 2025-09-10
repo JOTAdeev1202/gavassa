@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Receta - Pastas Gavassa</title>
+
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    <script src="https://use.fontawesome.com/0e3cac397a.js"></script>
+
+    <style>
+        /* Estilos específicos para la página de la receta */
+        .receta-full-page {
+            padding: 50px 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .receta-full-page h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #d82b26;
+        }
+        .receta-full-page .imagen-principal {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .receta-full-page .seccion-receta {
+            margin-bottom: 25px;
+        }
+        .receta-full-page h3 {
+            color: #555;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .receta-full-page ul, .receta-full-page ol {
+            padding-left: 20px;
+        }
+        .receta-full-page li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body class="receta">
+
+	<header>
+		<div class="menu-movil"><i class="fa fa-bars"></i></div>
+		<script type="text/javascript">
+			$(".menu-movil").click(function(){
+			    $(".menu").toggle();
+				});
+		</script>
+		<div class="logo-movil"><a href="index.html"><img src="img/logo.png"></a></div>
+		<div class="menu container">
+			<ul>
+				<li class="logo"><a href="index.html"><img src="img/logo.png"></a></li>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="nosotros.html">Nuestra Compañía</a></li>
+				<li class="">
+					<a href="#">Productos</a>
+					<ul>
+						<li class="gallery">
+							<a href="gavassa.html">Gavassa</a>
+						</li>
+						<li class="gallery">
+							<a href="catalogo.html">Catálogo</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href="recetas.html">Recetas</a></li>
+				<li><a href="#">Servicios</a>
+					<ul>
+						<li class="brochure-cat">
+							<a href="img/brochure1.jpg">Maquila</a>
+							<a class="ocultar" href="img/brochure2.jpg"></a>
+							<a class="ocultar" href="img/brochure3.jpg"></a>
+						</li>
+					</ul>
+				</li>
+				<li>
+				    <a href="cambiaton.html">Cambiatón</a>
+				</li>
+				<li><a href="#">Contáctenos</a>
+					<ul class="contacto-lista">
+						<li><a href="trabajo.html">Trabaje con nosotros</a></li>
+						<li><a href="proveedor.html">Quiere ser nuestro proveedor?</a></li>
+						<li><a href="pqr.html">Formato peticiones quejas y reclamos</a></li>
+						<li><a href="compras.html">Quiere comprar nuestro producto?</a></li>
+					</ul>
+				</li>
+			<li>
+			    <a href="login.php" class="link-blanco"><i class="fa fa-lock"></i> Acceso empleados</a>
+				<li>
+					<a href="https://www.psepagos.co/PSEHostingUI/DatabaseTicketOffice.aspx?ID=10078" target="_blank">
+						<img src="img/logo-pse.png" height="40">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	<section id="ver-receta-completa">
+		
+		<a href="recetas.html" class="btn-volver">Regresar a Recetas</a>
+		
+		<div class="container receta-full-page">
+            <h1 id="titulo-receta"></h1>
+            <div id="imagen-receta" class="imagen-principal"></div>
+            <div id="contenido-receta"></div>
+		</div>
+	</section>
+
+	<footer>
+		</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // Aquí debe ir el objeto RECETAS que tenías en el archivo original
+        // Es crucial que esta página también tenga acceso a esa información
+        const RECETAS = {
+			'ensalada-imperial': {
+				titulo: 'ENSALADA IMPERIAL',
+				imagen: 'http://gavassa.com/img/ensalada-imperial-thumb.jpg',
+				ingredientes: [
+					'125 g Caracoles Gavassa',
+					'1 espinaca',
+					'20 g. Queso azul',
+					'3 Champignones',
+					'Maiz tierno',
+					'Tomate cherry',
+					'50 gr queso'
+				],
+				aderezo: [
+					'100 ml de crema de leche',
+					'Sal al gusto',
+					'2 oz de miel',
+					'Ajo (gusto)',
+					'Perejil (al gusto)',
+					'2 copitas de vinagre blanco'
+				],
+				preparacion: [
+					'Cocine los caracoles Gavassa durante 7 minutos en agua hirviendo sal y una cucharadita de aceite.',
+					'Cortar los champignones en láminas y saltearlos 2 minutos.',
+					'Cortar los ingredientes en trozos y mezclarlos todos en un recipiente.',
+					'Incorporar la pasta en el mismo recipiente.',
+					'Para preparar el aderezo agregamos en un recipiente crema de leche, miel, sal, ajo, perejil y 2 copas de vinagre blanco y mezclamos.',
+					'Servimos la ensalada en un plato hondo, decoramos con los champignon y el aderezo.'
+				]
+			},
+			'macarron-napolitano': {
+				titulo: 'MACARRÓN NAPOLITANO',
+				imagen: 'http://gavassa.com/img/recetas/macarron-bolognesa-img.jpg',
+				ingredientes: [
+					'200 g Macarrones Gavassa',
+					'2 tomates maduros',
+					'1 cebolla',
+					'2 dientes de ajo',
+					'Aceite de oliva',
+					'Sal y pimienta al gusto',
+					'Queso parmesano rallado'
+				],
+				preparacion: [
+					'Cocinar los macarrones en agua hirviendo con sal según las instrucciones del paquete.',
+					'Mientras tanto, picar finamente la cebolla y el ajo.',
+					'En una sartén grande, calentar aceite de oliva y sofreír la cebolla hasta que esté transparente.',
+					'Agregar el ajo y cocinar por 1 minuto más.',
+					'Añadir los tomates picados y cocinar hasta que se forme una salsa espesa.',
+					'Agregar sal y pimienta al gusto.',
+					'Incorporar los macarrones cocidos a la salsa.',
+					'Servir con queso parmesano rallado por encima.'
+				]
+			},
+			'mousse': {
+				titulo: 'SPAGHETTI EN MOUSSE DE AGUACATE',
+				imagen: 'http://gavassa.com/img/recetas/pasta-aguacate-thumb.jpg',
+				ingredientes: [
+					'200 g Spaghetti Gavassa',
+					'2 aguacates maduros',
+					'2 dientes de ajo',
+					'Jugo de 1 limón',
+					'Aceite de oliva',
+					'Sal y pimienta al gusto',
+					'Perejil fresco'
+				],
+				preparacion: [
+					'Cocinar los spaghetti en agua hirviendo con sal.',
+					'En un procesador de alimentos, mezclar los aguacates, ajo, jugo de limón y aceite de oliva.',
+					'Procesar hasta obtener una mezcla suave y cremosa.',
+					'Sazonar con sal y pimienta al gusto.',
+					'Escurrir los spaghetti y mezclar con la mousse de aguacate.',
+					'Servir con perejil fresco picado por encima.'
+				]
+			},
+			'spaghetti-al-pesto': {
+				titulo: 'SPAGHETTI AL PESTO',
+				imagen: 'http://gavassa.com/img/recetas/pollo-alpesto-thumb.jpg',
+				ingredientes: [
+					'200 g Spaghetti Gavassa',
+					'2 tazas de albahaca fresca',
+					'1/2 taza de piñones',
+					'1/2 taza de queso parmesano rallado',
+					'2 dientes de ajo',
+					'1/2 taza de aceite de oliva',
+					'Sal al gusto'
+				],
+				preparacion: [
+					'Cocinar los spaghetti en agua hirviendo con sal.',
+					'En un procesador de alimentos, mezclar la albahaca, piñones, ajo y queso parmesano.',
+					'Agregar el aceite de oliva gradualmente mientras se procesa.',
+					'Sazonar con sal al gusto.',
+					'Escurrir los spaghetti y mezclar con el pesto.',
+					'Servir inmediatamente.'
+				]
+			},
+			'tomates-rellenos': {
+				titulo: 'TOMATES RELLENOS',
+				imagen: 'http://gavassa.com/img/recetas/tomate-relleno-thumb.jpg',
+				ingredientes: [
+					'4 tomates grandes',
+					'200 g pasta corta Gavassa',
+					'1 cebolla',
+					'2 dientes de ajo',
+					'Queso rallado',
+					'Aceite de oliva',
+					'Sal y pimienta'
+				],
+				preparacion: [
+					'Cortar la parte superior de los tomates y vaciar el interior.',
+					'Cocinar la pasta según las instrucciones del paquete.',
+					'Sofreír la cebolla y ajo picados en aceite de oliva.',
+					'Mezclar la pasta cocida con el sofrito y queso rallado.',
+					'Rellenar los tomates con la mezcla.',
+					'Hornear a 180°C por 15-20 minutos.'
+				]
+			},
+			'pasta-matrichiana': {
+				titulo: 'PASTA AMATRICIANA',
+				imagen: 'http://gavassa.com/img/recetas/tonillos-thumb.jpg',
+				ingredientes: [
+					'200 g Tonillos Gavassa',
+					'150 g panceta o tocino',
+					'1 cebolla',
+					'2 dientes de ajo',
+					'400 g tomates triturados',
+					'Queso pecorino rallado',
+					'Sal y pimienta'
+				],
+				preparacion: [
+					'Cortar la panceta en trozos pequeños y dorar en una sartén.',
+					'Agregar la cebolla picada y cocinar hasta que esté transparente.',
+					'Añadir el ajo picado y cocinar por 1 minuto.',
+					'Incorporar los tomates triturados y cocinar a fuego lento.',
+					'Cocinar la pasta en agua hirviendo con sal.',
+					'Mezclar la pasta con la salsa y servir con queso pecorino rallado.'
+				]
+			},
+			'spaghetti-corleone': {
+				titulo: 'SPAGHETTI CORLEONE',
+				imagen: 'http://gavassa.com/img/recetas/spaghetti-corleone-thumb.jpg',
+				ingredientes: [
+					'200 g Spaghetti Gavassa',
+					'300 g carne molida',
+					'1 cebolla',
+					'2 dientes de ajo',
+					'400 g salsa de tomate',
+					'Queso parmesano rallado',
+					'Sal y pimienta'
+				],
+				preparacion: [
+					'Cocinar la carne molida en una sartén grande.',
+					'Agregar la cebolla y ajo picados, cocinar hasta que estén dorados.',
+					'Incorporar la salsa de tomate y cocinar a fuego lento.',
+					'Cocinar los spaghetti en agua hirviendo con sal.',
+					'Mezclar la pasta con la salsa de carne.',
+					'Servir con queso parmesano rallado por encima.'
+				]
+			},
+			'macarron-pacco': {
+				titulo: 'MACARRÓN PACCO',
+				imagen: 'http://gavassa.com/img/recetas/macarron-pacco-thumb.jpg',
+				ingredientes: [
+					'200 g Macarrones Gavassa',
+					'200 g pollo en cubos',
+					'1 pimiento rojo',
+					'1 cebolla',
+					'2 dientes de ajo',
+					'Salsa de soja',
+					'Aceite de oliva'
+				],
+				preparacion: [
+					'Cocinar los macarrones en agua hirviendo con sal.',
+					'En una sartén, dorar el pollo en aceite de oliva.',
+					'Agregar los vegetales picados y cocinar hasta que estén tiernos.',
+					'Incorporar salsa de soja al gusto.',
+					'Mezclar con los macarrones cocidos.',
+					'Servir caliente.'
+				]
+			},
+			'cause-de-pasta': {
+				titulo: 'CAUSA DE PASTA',
+				imagen: 'http://gavassa.com/img/recetas/cause-de-pasta-thumb.jpg',
+				ingredientes: [
+					'200 g pasta corta Gavassa',
+					'4 papas amarillas',
+					'2 ajíes amarillos',
+					'1 cebolla roja',
+					'Limón',
+					'Aceite de oliva',
+					'Sal y pimienta'
+				],
+				preparacion: [
+					'Cocinar las papas hasta que estén tiernas, pelar y hacer puré.',
+					'Cocinar la pasta según las instrucciones del paquete.',
+					'Mezclar el puré de papas con ají amarillo, limón, sal y pimienta.',
+					'En un molde, hacer una capa de puré, luego pasta, y repetir.',
+					'Refrigerar por 2 horas antes de servir.',
+					'Servir con cebolla roja encurtida por encima.'
+				]
+			},
+			'spaghetti-a-la-oporto': {
+				titulo: 'SPAGHETTI A LA OPORTO',
+				imagen: 'http://gavassa.com/img/recetas/spaghetti-a-la-oporto-thumb.jpg',
+				ingredientes: [
+					'200 g Spaghetti Gavassa',
+					'200 g champiñones',
+					'1 cebolla',
+					'2 dientes de ajo',
+					'1/2 taza de vino oporto',
+					'Crema de leche',
+					'Perejil fresco'
+				],
+				preparacion: [
+					'Cocinar los spaghetti en agua hirviendo con sal.',
+					'En una sartén, sofreír la cebolla y ajo picados.',
+					'Agregar los champiñones laminados y cocinar hasta que estén dorados.',
+					'Incorporar el vino oporto y reducir a la mitad.',
+					'Agregar crema de leche y cocinar hasta que espese.',
+					'Mezclar con los spaghetti y servir con perejil fresco.'
+				]
+			},
+			'ensalada-verona': {
+				titulo: 'ENSALADA VERONA',
+				imagen: 'http://gavassa.com/img/recetas/ensalada-verona-thumb.jpg',
+				ingredientes: [
+					'150 g pasta corta Gavassa',
+					'Lechugas mixtas',
+					'Tomates cherry',
+					'Queso feta',
+					'Aceitunas negras',
+					'Aceite de oliva',
+					'Vinagre balsámico'
+				],
+				preparacion: [
+					'Cocinar la pasta en agua hirviendo con sal, enfriar bajo agua fría.',
+					'En un bowl grande, mezclar la pasta con las lechugas.',
+					'Agregar los tomates cherry cortados por la mitad.',
+					'Incorporar queso feta desmenuzado y aceitunas.',
+					'Aliñar con aceite de oliva, vinagre balsámico, sal y pimienta.',
+					'Servir frío.'
+				]
+			},
+			'coditos-queso': {
+				titulo: 'CODITOS EN SALSA DE QUESO',
+				imagen: 'http://gavassa.com/img/recetas/coditos-queso-thumb.jpg',
+				ingredientes: [
+					'200 g Coditos Gavassa',
+					'2 cucharadas de mantequilla',
+					'2 cucharadas de harina',
+					'1 taza de leche',
+					'1 taza de queso cheddar rallado',
+					'Sal y pimienta al gusto'
+				],
+				preparacion: [
+					'Cocinar los coditos en agua hirviendo con sal.',
+					'En una sartén, derretir la mantequilla y agregar la harina.',
+					'Cocinar por 1 minuto revolviendo constantemente.',
+					'Agregar la leche gradualmente mientras se revuelve.',
+					'Incorporar el queso rallado y cocinar hasta que se derrita.',
+					'Mezclar con los coditos cocidos y servir.'
+				]
+			},
+			'spaghetti-vegano': {
+				titulo: 'SPAGHETTI VEGANO',
+				imagen: 'http://gavassa.com/img/recetas/spaghetti-vegano-thumb.jpg',
+				ingredientes: [
+					'200 g Spaghetti Gavassa',
+					'2 calabacines',
+					'2 dientes de ajo',
+					'Aceite de oliva',
+					'Albahaca fresca',
+					'Sal y pimienta',
+					'Nueces picadas'
+				],
+				preparacion: [
+					'Cocinar los spaghetti en agua hirviendo con sal.',
+					'Cortar los calabacines en juliana fina.',
+					'En una sartén, sofreír el ajo picado en aceite de oliva.',
+					'Agregar los calabacines y cocinar hasta que estén tiernos.',
+					'Mezclar con los spaghetti cocidos.',
+					'Servir con albahaca fresca y nueces picadas por encima.'
+				]
+			}
+		};
+
+        // Función para obtener un parámetro de la URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener el ID de la receta de la URL
+            const recetaId = getUrlParameter('receta');
+
+            // Verificar si el ID existe y si la receta está en nuestro objeto de datos
+            if (recetaId && RECETAS[recetaId]) {
+                const receta = RECETAS[recetaId];
+                
+                // Actualizar el título de la página
+                document.title = receta.titulo + ' - Pastas Gavassa';
+
+                // Mostrar la información de la receta
+                document.getElementById('titulo-receta').textContent = receta.titulo;
+                document.getElementById('imagen-receta').style.backgroundImage = `url(${receta.imagen})`;
+
+                let contenidoHTML = '';
+                
+                // Sección de ingredientes
+                if (receta.ingredientes) {
+                    contenidoHTML += '<div class="seccion-receta">';
+                    contenidoHTML += '<h3>Ingredientes:</h3>';
+                    contenidoHTML += '<ul>';
+                    receta.ingredientes.forEach(ingrediente => {
+                        contenidoHTML += `<li>${ingrediente}</li>`;
+                    });
+                    contenidoHTML += '</ul>';
+                    contenidoHTML += '</div>';
+                }
+                
+                // Sección de aderezo (si existe)
+                if (receta.aderezo) {
+                    contenidoHTML += '<div class="seccion-receta">';
+                    contenidoHTML += '<h3>Aderezo:</h3>';
+                    contenidoHTML += '<ul>';
+                    receta.aderezo.forEach(ingrediente => {
+                        contenidoHTML += `<li>${ingrediente}</li>`;
+                    });
+                    contenidoHTML += '</ul>';
+                    contenidoHTML += '</div>';
+                }
+                
+                // Sección de preparación
+                if (receta.preparacion) {
+                    contenidoHTML += '<div class="seccion-receta">';
+                    contenidoHTML += '<h3>Preparación:</h3>';
+                    contenidoHTML += '<ol>';
+                    receta.preparacion.forEach(paso => {
+                        contenidoHTML += `<li>${paso}</li>`;
+                    });
+                    contenidoHTML += '</ol>';
+                    contenidoHTML += '</div>';
+                }
+                
+                document.getElementById('contenido-receta').innerHTML = contenidoHTML;
+
+            } else {
+                // Si no se encuentra la receta, mostrar un mensaje de error
+                document.getElementById('titulo-receta').textContent = 'Receta no encontrada';
+                document.getElementById('contenido-receta').innerHTML = '<p style="text-align: center; color: red;">Lo sentimos, la receta que buscas no existe.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
