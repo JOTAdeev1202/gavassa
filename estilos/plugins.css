@@ -1,0 +1,58 @@
+/* Estilos de Plugins (Herramientas de Maestros Externos) */
+/* --- Estilos para Popup Slider --- */
+.popup .my-slider ul li {
+    transition: .5s;
+    -webkit-box-shadow: 0px 0px 41px 32px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 41px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 41px 32px rgba(0, 0, 0, 0.3);
+}
+
+.popup .my-slider ul li:hover {
+    transform: scale(1.1);
+}
+
+/* --- Estilos para SimpleLightbox --- */
+.sl-overlay {
+    opacity: .7 !important;
+    background: #999 !important;
+}
+
+.sl-wrapper .sl-close,
+.sl-wrapper .sl-counter {
+    color: #666 !important;
+}
+
+.sl-wrapper .sl-navigation button {
+    color: #666 !important;
+}
+
+/* --- Estilos para Video --- */
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-foreground {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .vid-info {
+        width: 50%;
+        padding: .5rem;
+    }
+    .vid-info h1 {
+        margin-bottom: .2rem;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .vid-info .acronym {
+        display: none;
+    }
+}

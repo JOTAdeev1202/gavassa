@@ -1,0 +1,250 @@
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-image {
+    position: relative;
+    border-radius: 15px 0 0 15px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.modal-half.text-container {
+    padding: 40px 30px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: #fff;
+    scrollbar-width: thin;
+    scrollbar-color: #bd0811 #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 0;
+    padding-top: 50px;
+}
+
+#modal-content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #bd0811 #f0f0f0;
+}
+
+#modal-content::-webkit-scrollbar,
+.modal-half.text-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+#modal-content::-webkit-scrollbar-track,
+.modal-half.text-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+#modal-content::-webkit-scrollbar-thumb,
+.modal-half.text-container::-webkit-scrollbar-thumb {
+    background: #bd0811;
+    border-radius: 3px;
+}
+
+#modal-content::-webkit-scrollbar-thumb:hover,
+.modal-half.text-container::-webkit-scrollbar-thumb:hover {
+    background: #ee412f;
+}
+
+#modal-recipe-title {
+    color: #bd0811;
+    font-family: 'Hammersmith One', sans-serif;
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 32px;
+    line-height: 1.2;
+    flex-shrink: 0;
+    margin-top: 0;
+}
+
+.modal-half.text-container h3 {
+    font-family: 'Hammersmith One', sans-serif;
+    color: #bd0811;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #bd0811;
+    padding-bottom: 5px;
+    flex-shrink: 0;
+}
+
+.modal-half.text-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    min-height: 0;
+}
+
+.modal-half.text-container ul li {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #333;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.4;
+}
+
+.modal-half.text-container ul li::before {
+    content: '•';
+    color: #bd0811;
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: bold;
+    top: 0;
+}
+
+.modal-half.text-container ol {
+    list-style: none;
+    padding: 0;
+    counter-reset: preparation-steps;
+    flex: 1;
+    min-height: 0;
+}
+
+.modal-half.text-container ol li {
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: #333;
+    position: relative;
+    padding-left: 50px;
+    line-height: 1.5;
+}
+
+.modal-half.text-container .numero {
+    background-color: #bd0811;
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    flex-shrink: 0;
+}
+
+/* Media Queries para el Popup */
+@media (min-width: 769px) and (max-width: 900px) {
+    .popup {
+        max-width: 85%;
+        max-height: 80vh;
+        grid-template-columns: 1fr 1fr;
+        min-height: 400px;
+    }
+    .modal-image {
+        min-height: 350px;
+        max-height: 100%;
+    }
+    .modal-half.text-container {
+        padding: 25px 20px;
+    }
+    #modal-recipe-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .modal-half.text-container h3 {
+        font-size: 19px;
+        margin-top: 18px;
+        margin-bottom: 10px;
+    }
+    .modal-half.text-container ul li,
+    .modal-half.text-container ol li {
+        font-size: 14px;
+        margin-bottom: 7px;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 768px) {
+    .popup {
+        grid-template-columns: 1fr;
+        border-radius: 15px;
+        width: 98%;
+        max-height: 95vh;
+        overflow-y: hidden;
+    }
+    .modal-image {
+        min-height: 200px;
+        max-height: 200px;
+        border-radius: 15px 15px 0 0;
+        height: 200px;
+    }
+    .modal-half.text-container {
+        padding: 20px 15px;
+        max-height: calc(95vh - 200px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    #modal-recipe-title {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    .modal-half.text-container h3 {
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    .modal-half.text-container ul li,
+    .modal-half.text-container ol li {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    .close-btn {
+        top: 8px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .modal-image {
+        min-height: 400px;
+        max-height: 100%;
+    }
+    .modal-half.text-container {
+        padding: 30px 25px;
+    }
+    #modal-recipe-title {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+    .modal-half.text-container h3 {
+        font-size: 21px;
+        margin-top: 20px;
+        margin-bottom: 12px;
+    }
+    .modal-half.text-container ul li,
+    .modal-half.text-container ol li {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+}
